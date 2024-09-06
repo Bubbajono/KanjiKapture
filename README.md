@@ -1,6 +1,6 @@
 # KanjiKapture
 
-**KanjiKapture** is an innovative tool for Japanese language learners that transforms the way you explore and understand Japanese characters. With a focus on interactivity and visual appeal, KanjiKapture helps you discover and analyze Japanese characters with dynamic examples.
+**KanjiKapture** is an innovative .NET MAUI-based tool for Japanese language learners that transforms the way you explore and understand Japanese characters. With a focus on interactivity and visual appeal, KanjiKapture helps you discover and analyze Japanese characters with dynamic examples.
 
 ## Features
 
