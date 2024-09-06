@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KanjiKapture.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="20">
+            <Image
+                Source="kanji_placeholder.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label
+                Text="KanjiKapture"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Welcome to Kanji Kapture - Your Kanji Kompanion"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to Kanji Kapture - Your Kanji Kompanion" />
+
+            <Entry
+                x:Name="KanjiSearchEntry"
+                Placeholder = "漢字"
+                TextChanged="OnEntryTextChanged"
+                Completed="OnEntryCompleted">
+            </Entry>
+
+            <Label
+                x:Name="KanjiSearchNotificationLabel"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="Notification" 
+                FontSize="10"/>
+
+            <Button
+                x:Name="SearchBtn"
+                Text="Search for compounds" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnSearchClicked"
+                HorizontalOptions="Fill" />
+
+            <ListView x:Name="CompoundsListView" 
+                      ItemSelected="OnCompoundSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Frame 
+                   x:Name="CompoundDetailViewBorder"
+                   IsVisible="False"
+                   BorderColor="Black"
+                   CornerRadius="5"
+                   HasShadow="False"
+                   Padding="0"
+                   Margin="10">
+                <ContentView x:Name="CompoundDetailView"
+                 IsVisible="False">
+                    <StackLayout Padding="10">
+                        <Label x:Name="SlugLabel" FontSize="18" />
+                        <Label x:Name="IsCommonLabel" />
+                        <Label x:Name="JlptLevelsLabel" />
+                        <Label x:Name="JapaneseWordsLabel" />
+                        <Label x:Name="SensesLabel" />
+                        <Label x:Name="AttributionLabel" />
+                    </StackLayout>
+                </ContentView>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,1 @@
+C:\Users\Jonathan\source\repos\KanjiKapture\KanjiKapture\KanjiKapture.csproj;x64
